@@ -1,0 +1,5 @@
+{:source-dir  "dev/portfolio/styles"
+ :var         portfolio.styles.main/screen
+ :output-file "resources/public/styles.css"
+ :flags       {:pretty-print? true
+               :vendors       ["webkit" "moz" "o"]}}
