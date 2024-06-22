@@ -7,8 +7,6 @@
             [portfolio.pages.projects.fourier-series :as projects.fourier-series]
             [portfolio.pages.projects.graphing-calculator :as projects.graphing-calculator]
             [portfolio.pages.projects.http-server :as projects.http-server]
-            [portfolio.pages.projects.isometric-engine :as projects.isometric-engine]
-            [portfolio.pages.projects.multiplayer-game :as projects.multiplayer-game]
             [portfolio.pages.projects.music-player :as projects.music-player]
             [portfolio.pages.projects.programming-challenges :as projects.programming-challenges]
             [portfolio.pages.projects.specc :as specc]
