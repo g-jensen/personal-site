@@ -4,11 +4,11 @@
 (def page
   (list
    [:html {:lang "en"}]
-   (page/head "Greg Jensen")
+   (page/head "Greg Jensen's Website")
    [:body
     page/nav-bar
     [:div.center
-     [:h1 "Greg Jensen"]]
+     [:h1 "Greg Jensen's Website"]]
     [:div.center
      [:h4.subtitle "Programmer & Student living in Indianapolis, IN interested in Mathematics and Software Development."]]
     [:div.center
@@ -18,12 +18,12 @@
      [:a.project-item {:href "https://set.gregjensen.dev"}
       "Set"
       [:img.project-image {:src "images/set.png" :alt "The card game Set"}]]
-     [:a.project-item {:href "./multiplayer-game"}
+     [:a.project-item {:href "./specc"}
       "specc"
-      [:img.project-image {:src "images/specc.png" :alt "spec c"}]]
-     [:a.project-item {:href "./multiplayer-game"}
+      [:img.project-image {:src "images/specc.png" :alt "specc"}]]
+     [:a.project-item {:href "https://scattergories.gregjensen.dev"}
       "Scattergories"
-      [:img.project-image {:src "images/mpgame.png" :alt "A multiplayer game"}]]
+      [:img.project-image {:src "images/scattergories.png" :alt "Scattergories"}]]
      [:a.project-item {:href "./http-server"}
       "HTTP Server"
       [:img.project-image {:src "images/http.png" :alt "HTTP Server"}]]

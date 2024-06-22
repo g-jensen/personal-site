@@ -11,6 +11,7 @@
             [portfolio.pages.projects.multiplayer-game :as projects.multiplayer-game]
             [portfolio.pages.projects.music-player :as projects.music-player]
             [portfolio.pages.projects.programming-challenges :as projects.programming-challenges]
+            [portfolio.pages.projects.specc :as specc]
             [portfolio.pages.projects.text-editor :as projects.text-editor]
             [speclj.core :refer [before context describe it redefs-around
                                  should-have-invoked with-stubs]]
@@ -51,12 +52,6 @@
     (it "http-server"
       (should-have-invoked :spit {:with ["resources/public/http-server" (str (hiccup/html projects.http-server/page))]}))
 
-    (it "isometric-engine"
-      (should-have-invoked :spit {:with ["resources/public/isometric-engine" (str (hiccup/html projects.isometric-engine/page))]}))
-
-    (it "multiplayer-game"
-      (should-have-invoked :spit {:with ["resources/public/multiplayer-game" (str (hiccup/html projects.multiplayer-game/page))]}))
-
     (it "music-player"
       (should-have-invoked :spit {:with ["resources/public/music-player" (str (hiccup/html projects.music-player/page))]}))
 
@@ -66,6 +61,9 @@
     (it "text-editor"
       (should-have-invoked :spit {:with ["resources/public/text-editor" (str (hiccup/html projects.text-editor/page))]}))
     
-    (it "text-editor"
-      (should-have-invoked :spit {:with ["resources/public/math" (str (hiccup/html math/page))]}))))
+    (it "math"
+      (should-have-invoked :spit {:with ["resources/public/math" (str (hiccup/html math/page))]}))
+    
+    (it "specc"
+      (should-have-invoked :spit {:with ["resources/public/specc" (str (hiccup/html specc/page))]}))))
     

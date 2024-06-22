@@ -11,7 +11,6 @@
 (def nav-bar
   [:div.center
    [:a {:href "./index.html"} "Home"]
-   [:a {:href "./demos"} "Demos"]
    [:a {:href "./math"} "Math"]
    [:a {:href "mailto:greg.micah.jensen@gmail.com"} "Email"]
    [:a {:href "https://blog.gregjensen.dev"} "Blog"]

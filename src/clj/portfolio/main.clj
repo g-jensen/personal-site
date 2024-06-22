@@ -11,6 +11,7 @@
             [portfolio.pages.projects.multiplayer-game :as projects.multiplayer-game]
             [portfolio.pages.projects.music-player :as projects.music-player]
             [portfolio.pages.projects.programming-challenges :as projects.programming-challenges]
+            [portfolio.pages.projects.specc :as specc]
             [portfolio.pages.projects.text-editor :as projects.text-editor]))
 
 (def page-path "resources/public/")
@@ -24,10 +25,11 @@
                         (page/->page (str page-path "fourier-series") projects.fourier-series/page)
                         (page/->page (str page-path "graphing-calculator") projects.graphing-calculator/page)
                         (page/->page (str page-path "http-server") projects.http-server/page)
-                        (page/->page (str page-path "isometric-engine") projects.isometric-engine/page)
-                        (page/->page (str page-path "multiplayer-game") projects.multiplayer-game/page)
+                        ;(page/->page (str page-path "isometric-engine") projects.isometric-engine/page)
+                        ;(page/->page (str page-path "multiplayer-game") projects.multiplayer-game/page)
                         (page/->page (str page-path "music-player") projects.music-player/page)
                         (page/->page (str page-path "text-editor") projects.text-editor/page)
                         (page/->page (str page-path "programming-challenges") projects.programming-challenges/page)
                         (page/->page (str page-path "math") math/page)
+                        (page/->page (str page-path "specc") specc/page)
                         ]))
