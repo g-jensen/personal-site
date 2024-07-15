@@ -1,5 +1,6 @@
 (ns portfolio.main
   (:require [hiccup2.core :as hiccup]
+            [portfolio.config :as config]
             [portfolio.page :as page]
             [portfolio.pages.home :as home]
             [portfolio.pages.math :as math]
@@ -28,4 +29,5 @@
                         (page/->page (str page-path "programming-challenges") projects.programming-challenges/page)
                         (page/->page (str page-path "math") math/page)
                         (page/->page (str page-path "specc") specc/page)
-                        ]))
+                        ])
+  (prn config/host))
