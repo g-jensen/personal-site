@@ -10,8 +10,8 @@
 
 (def nav-bar
   [:div.center
-   [:a {:href "./index.html"} "Home"]
-   [:a {:href "./math"} "Math"]
+   [:a {:href "gregjensen.dev"} "Home"]
+   [:a {:href "gregjensen.dev/math"} "Math"]
    [:a {:href "mailto:greg.micah.jensen@gmail.com"} "Email"]
    [:a {:href "https://blog.gregjensen.dev"} "Blog"]
    [:a {:href "https://www.github.com/g-jensen"} "GitHub"]])
