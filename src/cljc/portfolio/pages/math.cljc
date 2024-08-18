@@ -32,4 +32,5 @@
         [:li [:a {:href "https://blog.gregjensen.dev/2023-06-28-tau-day"} "Tau Day"]]
         [:li [:a {:href "https://blog.gregjensen.dev/2023-06-30-1729"} "1729"]]
         [:li [:a {:href "https://blog.gregjensen.dev/2023-07-07-mathematical-bridge"} "Mathematical Bridge"]]
-        [:li [:a {:href "https://blog.gregjensen.dev/2023-07-10-oeis"} "OEIS"]]]]]]]))
+        [:li [:a {:href "https://blog.gregjensen.dev/2023-07-10-oeis"} "OEIS"]]
+        [:li [:a {:href "https://blog.gregjensen.dev/2024-07-11-math-apology"} "A Mathematician's Apology"]]]]]]]))
