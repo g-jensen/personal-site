@@ -27,6 +27,9 @@
      [:a.project-item {:href "./http-server"}
       "HTTP Server"
       [:img.project-image {:src "images/http.png" :alt "HTTP Server"}]]
+     [:a.project-item {:href "https://catchphrase.gregjensen.dev"}
+      "Catchphrase"
+      [:img.project-image {:src "images/catchphrase.png" :alt "Catchphrase"}]]
      [:a.project-item {:href "./text-editor"}
       "Text Editor"
       [:img.project-image {:src "images/text_editor.png" :alt "Text editor"}]]
