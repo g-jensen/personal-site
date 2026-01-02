@@ -1,4 +1,6 @@
-(ns portfolio.page)
+(ns portfolio.page 
+  (:require
+    [portfolio.config :as config]))
 
 (defn head [title]
   [:head
@@ -10,10 +12,10 @@
 
 (def nav-bar
   [:div.center
-   [:a {:href "https://gregjensen.dev"} "Home"]
-   [:a {:href "https://gregjensen.dev/math"} "Math"]
+   [:a {:href config/host} "Home"]
+   [:a {:href (str config/host "/math.html")} "Math"]
    [:a {:href "mailto:greg.micah.jensen@gmail.com"} "Email"]
-   [:a {:href "https://blog.gregjensen.dev"} "Blog"]
+   [:a {:href (str config/host "/blog")} "Blog"]
    [:a {:href "https://www.github.com/g-jensen"} "GitHub"]])
 
 (defn ->page [file-name hiccup]
