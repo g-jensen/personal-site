@@ -44,6 +44,12 @@
  
  [:.list-style-none
   {:list-style "none"}]
+ 
+ [:.display-flex
+  {:display "flex"}]
+ 
+ [:.justify-evenly
+  {:justify-content "space-evenly"}]
 
  [:.center
   {:display "flex"
