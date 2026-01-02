@@ -1,6 +1,11 @@
 (ns portfolio.pages.home 
   (:require [portfolio.page :as page]))
 
+(defn project->html [{:keys [label href img] :as _project}] 
+  [:a.project-item {:href href}
+   label
+   [:img.project-image img]])
+
 (def page
   (list
    [:html {:lang "en"}]
@@ -15,37 +20,19 @@
      [:h2.subtitle 
       [:u "Projects"]]]
     [:div.project-container
-     [:a.project-item {:href "https://set.gregjensen.dev"}
-      "Set"
-      [:img.project-image {:src "images/set.png" :alt "The card game Set"}]]
-     [:a.project-item {:href "./specc"}
-      "specc"
-      [:img.project-image {:src "images/specc.png" :alt "specc"}]]
-     [:a.project-item {:href "https://scattergories.gregjensen.dev"}
-      "Scattergories"
-      [:img.project-image {:src "images/scattergories.png" :alt "Scattergories"}]]
-     [:a.project-item {:href "./http-server"}
-      "HTTP Server"
-      [:img.project-image {:src "images/http.png" :alt "HTTP Server"}]]
-     [:a.project-item {:href "https://catchphrase.gregjensen.dev"}
-      "Catchphrase"
-      [:img.project-image {:src "images/catchphrase.png" :alt "Catchphrase"}]]
-     [:a.project-item {:href "./text-editor"}
-      "Text Editor"
-      [:img.project-image {:src "images/text_editor.png" :alt "Text editor"}]]
-     [:a.project-item {:href "./graphing-calculator"}
-      "Graphing Calculator"
-      [:img.project-image {:src "images/graphing.png" :alt "Graphing Calculator"}]]
-     [:a.project-item {:href "./programming-challenges"}
-      "Programming Challenges"
-      [:img.project-image {:src "images/project-euler.png" :alt "Project Euler"}]]
-     [:a.project-item {:href "./bezier-curve"}
-      "Bezier Curve Visualization"
-      [:img.project-image {:src "images/bezier.png" :alt "Bezier curve"}]]
-     [:a.project-item {:href "./fourier-series"}
-      "Fourier Series Visualization"
-      [:img.project-image {:src "images/fourier.png" :alt "Fourier series"}]]
-     [:a.project-item {:href "./music-player"}
-      "Music Player"
-      [:img.project-image {:src "images/musicplayer.png" :alt "Music player"}]]]])
+     (doall 
+      (map 
+       project->html 
+       [{:label "Set"                          :href "https://set.sajensen.dev"           :img {:src "images/set.png"           :alt "The card game Set"}}
+        {:label "specc"                        :href "./specc.html"                       :img {:src "images/specc.png"         :alt "Testing library"}}
+        {:label "Scattergories"                :href "https://scattergories.sajensen.dev" :img {:src "images/scattergories.png" :alt "Scattergories"}}
+        {:label "HTTP Server"                  :href "./http-server.html"                 :img {:src "images/http.png"          :alt "HTTP Server"}}
+        {:label "Catchphrase"                  :href "https://catchphrase.sajensen.dev"   :img {:src "images/catchphrase.png"   :alt "Catchphrase"}}
+        {:label "Text Editor"                  :href "./text-editor.html"                 :img {:src "images/text_editor.png"   :alt "Text editor"}}
+        {:label "Graphing Calculator"          :href "./graphing-calculator.html"         :img {:src "images/graphing.png"      :alt "Graphing Calculator"}}
+        {:label "Programming Challenges"       :href "./programming-challenges.html"      :img {:src "images/project-euler.png" :alt "Project Euler"}}
+        {:label "Bezier Curve Visualization"   :href "./bezier-curve.html"                :img {:src "images/bezier.png"        :alt "Bezier curve"}}
+        {:label "Fourier Series Visualization" :href "./fourier-series.html"              :img {:src "images/fourier.png"       :alt "Fourier series"}}
+        {:label "Music Player"                 :href "./music-player.html"                :img {:src "images/musicplayer.png"   :alt "Music player"}}]))
+     ]])
   )

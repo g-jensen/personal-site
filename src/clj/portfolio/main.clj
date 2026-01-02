@@ -18,16 +18,20 @@
 (defn generate-page! [page]
   (spit (:file-name page) (str (hiccup/html (:hiccup page)))))
 
+(def pages
+  {
+   "index"                  home/page
+   "bezier-curve"           projects.bezier-curve/page
+   "fourier-series"         projects.fourier-series/page
+   "graphing-calculator"    projects.graphing-calculator/page
+   "http-server"            projects.http-server/page
+   "music-player"           projects.music-player/page
+   "text-editor"            projects.text-editor/page
+   "programming-challenges" projects.programming-challenges/page
+   "math"                   math/page
+   "specc"                  specc/page
+  })
+
 (defn -main [& args]
-  (run! generate-page! [(page/->page (str page-path "index.html") home/page)
-                        (page/->page (str page-path "bezier-curve") projects.bezier-curve/page)
-                        (page/->page (str page-path "fourier-series") projects.fourier-series/page)
-                        (page/->page (str page-path "graphing-calculator") projects.graphing-calculator/page)
-                        (page/->page (str page-path "http-server") projects.http-server/page)
-                        (page/->page (str page-path "music-player") projects.music-player/page)
-                        (page/->page (str page-path "text-editor") projects.text-editor/page)
-                        (page/->page (str page-path "programming-challenges") projects.programming-challenges/page)
-                        (page/->page (str page-path "math") math/page)
-                        (page/->page (str page-path "specc") specc/page)
-                        ])
+  (run! generate-page! (map (fn [[k v]] (page/->page (str page-path k ".html") v)) pages))
   (prn config/host))

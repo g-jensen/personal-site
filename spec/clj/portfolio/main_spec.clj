@@ -39,29 +39,29 @@
       (should-have-invoked :spit {:with ["resources/public/index.html" (str (hiccup/html home/page))]}))
 
     (it "bezier-curve"
-      (should-have-invoked :spit {:with ["resources/public/bezier-curve" (str (hiccup/html projects.bezier-curve/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/bezier-curve.html" (str (hiccup/html projects.bezier-curve/page))]}))
 
     (it "fourier-series"
-      (should-have-invoked :spit {:with ["resources/public/fourier-series" (str (hiccup/html projects.fourier-series/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/fourier-series.html" (str (hiccup/html projects.fourier-series/page))]}))
 
     (it "graphing-calculator"
-      (should-have-invoked :spit {:with ["resources/public/graphing-calculator" (str (hiccup/html projects.graphing-calculator/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/graphing-calculator.html" (str (hiccup/html projects.graphing-calculator/page))]}))
 
     (it "http-server"
-      (should-have-invoked :spit {:with ["resources/public/http-server" (str (hiccup/html projects.http-server/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/http-server.html" (str (hiccup/html projects.http-server/page))]}))
 
     (it "music-player"
-      (should-have-invoked :spit {:with ["resources/public/music-player" (str (hiccup/html projects.music-player/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/music-player.html" (str (hiccup/html projects.music-player/page))]}))
 
     (it "programming-challenges"
-      (should-have-invoked :spit {:with ["resources/public/programming-challenges" (str (hiccup/html projects.programming-challenges/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/programming-challenges.html" (str (hiccup/html projects.programming-challenges/page))]}))
 
     (it "text-editor"
-      (should-have-invoked :spit {:with ["resources/public/text-editor" (str (hiccup/html projects.text-editor/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/text-editor.html" (str (hiccup/html projects.text-editor/page))]}))
     
     (it "math"
-      (should-have-invoked :spit {:with ["resources/public/math" (str (hiccup/html math/page))]}))
+      (should-have-invoked :spit {:with ["resources/public/math.html" (str (hiccup/html math/page))]}))
     
     (it "specc"
-      (should-have-invoked :spit {:with ["resources/public/specc" (str (hiccup/html specc/page))]}))))
+      (should-have-invoked :spit {:with ["resources/public/specc.html" (str (hiccup/html specc/page))]}))))
     
