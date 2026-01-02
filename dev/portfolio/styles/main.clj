@@ -1,10 +1,50 @@
 (ns portfolio.styles.main
   (:refer-clojure :exclude [rem])
-  (:require [garden.def :as garden]))
+  (:require [garden.def :as garden]
+            [garden.stylesheet :refer [at-media]]))
 
 (garden/defstyles screen
 
 (list
+ 
+ [:.post
+  {:display "flex"
+   :justify-content "center"}
+ 
+  [:img
+   {:width "100%"}]
+ 
+  [:div
+   {:text-align "left"
+    :max-width "30%"}
+ 
+   [:ul
+    {:text-align "left"}]
+ 
+   [:pre
+    {:background "#eef"
+     :text-align "left"}
+    [:code
+     {:background "#eef"}]]]]
+ 
+ [:.padding-left-30
+  {:padding-left "30%"}]
+ 
+ [:.padding-left-0
+  {:padding-left "0"}]
+ 
+ [:.margin-0
+  {:margin "0"}]
+ 
+ [:.font-2rem
+  {:font-size "2rem"}]
+ 
+ [:.padding-bottom-2
+  {:padding-bottom "5%"}]
+ 
+ [:.list-style-none
+  {:list-style "none"}]
+
  [:.center
   {:display "flex"
    :justify-content "center"
@@ -37,6 +77,11 @@
    :height "103px"
    ;:height "auto"
    }]
+ 
+ (at-media {:max-width "1000px"}
+           [:.post
+            [:div
+             {:max-width "90%"}]])
  
  )
   
