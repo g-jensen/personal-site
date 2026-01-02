@@ -11,7 +11,8 @@
             [portfolio.pages.projects.music-player :as projects.music-player]
             [portfolio.pages.projects.programming-challenges :as projects.programming-challenges]
             [portfolio.pages.projects.specc :as specc]
-            [portfolio.pages.projects.text-editor :as projects.text-editor]))
+            [portfolio.pages.projects.text-editor :as projects.text-editor]
+            [blog-site.static :as blog]))
 
 (def page-path "resources/public/")
 
@@ -34,4 +35,5 @@
 
 (defn -main [& args]
   (run! generate-page! (map (fn [[k v]] (page/->page (str page-path k ".html") v)) pages))
+  (blog/-main "resources/posts" "resources/public/blog" ".html" page/nav-bar)
   (prn config/host))
