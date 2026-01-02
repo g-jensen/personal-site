@@ -7,7 +7,7 @@
              com.cleancoders.c3kit/apron         {:git/url "git@github.com:cleancoders/c3kit-apron.git" :git/sha "44b3e6a5e541d78f5d99fd1089b74e8bf81d075f"}
              com.cleancoders.c3kit/bucket        {:git/url "git@github.com:cleancoders/c3kit-bucket.git" :git/sha "4c6ab21c20da27c9ab044cedfc1d0429ab49b507"}
              com.cleancoders.c3kit/wire          {:git/url "git@github.com:cleancoders/c3kit-wire.git" :git/sha "19f87c52c6a7d80387cb26dd07a6c128d4a21ce5"}
-             blog-site/blog-site                 {:git/url "git@github.com:g-jensen/blog-site.git" :git/sha "3b61b783e254041582003b9519256a4574a8dcbf"}
+             blog-site/blog-site                 {:git/url "git@github.com:g-jensen/blog-site.git" :git/sha "269c6a676ce93b29a406ac52a193b42de00d569f"}
              hiccup/hiccup                                             {:mvn/version "2.0.0-RC3"}
              org.clojure/clojure                                       {:mvn/version "1.11.1"}
              org.clojure/math.combinatorics {:mvn/version "0.2.0"}}
