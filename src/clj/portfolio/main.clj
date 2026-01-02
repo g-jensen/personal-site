@@ -1,6 +1,5 @@
 (ns portfolio.main
-  (:require [hiccup2.core :as hiccup]
-            [portfolio.config :as config]
+  (:require [hiccup2.core :as hiccup] 
             [portfolio.page :as page]
             [portfolio.pages.home :as home]
             [portfolio.pages.math :as math]
@@ -35,5 +34,4 @@
 
 (defn -main [& args]
   (run! generate-page! (map (fn [[k v]] (page/->page (str page-path k ".html") v)) pages))
-  (blog/-main "resources/posts" "resources/public/blog" ".html" page/nav-bar)
-  (prn config/host))
+  (blog/-main "resources/posts" "resources/public/blog" ".html" page/nav-bar))

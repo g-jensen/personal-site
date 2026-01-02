@@ -1,6 +1,5 @@
 (ns portfolio.pages.math 
-  (:require [portfolio.page :as page]
-            [portfolio.config :as config]))
+  (:require [portfolio.page :as page]))
 
 (def page
   (list
@@ -27,11 +26,11 @@
         [:li "Assignment for college English class"]]]
       [:li "Mathy Blog Posts"
        [:ul
-        [:li [:a {:href (str config/host "/blog/2023-05-19-modular-exponentiation.html")} "Modular Exponentiation"]]
-        [:li [:a {:href (str config/host "/blog/2023-06-07-discrete-cantor-set.html")} "Discrete Cantor Set"]]
-        [:li [:a {:href (str config/host "/blog/2023-06-20-sqrt-construction.html")} "Square Root Construction"]]
-        [:li [:a {:href (str config/host "/blog/2023-06-28-tau-day.html")} "Tau Day"]]
-        [:li [:a {:href (str config/host "/blog/2023-06-30-1729.html")} "1729"]]
-        [:li [:a {:href (str config/host "/blog/2023-07-07-mathematical-bridge.html")} "Mathematical Bridge"]]
-        [:li [:a {:href (str config/host "/blog/2023-07-10-oeis.html")} "OEIS"]]
-        [:li [:a {:href (str config/host "/blog/2024-07-11-math-apology.html")} "A Mathematician's Apology"]]]]]]]))
+        [:li [:a {:href "/blog/2023-05-19-modular-exponentiation.html"} "Modular Exponentiation"]]
+        [:li [:a {:href "/blog/2023-06-07-discrete-cantor-set.html"} "Discrete Cantor Set"]]
+        [:li [:a {:href "/blog/2023-06-20-sqrt-construction.html"} "Square Root Construction"]]
+        [:li [:a {:href "/blog/2023-06-28-tau-day.html"} "Tau Day"]]
+        [:li [:a {:href "/blog/2023-06-30-1729.html"} "1729"]]
+        [:li [:a {:href "/blog/2023-07-07-mathematical-bridge.html"} "Mathematical Bridge"]]
+        [:li [:a {:href "/blog/2023-07-10-oeis.html"} "OEIS"]]
+        [:li [:a {:href "/blog/2024-07-11-math-apology.html"} "A Mathematician's Apology"]]]]]]]))
