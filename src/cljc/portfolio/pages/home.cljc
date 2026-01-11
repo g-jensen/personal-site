@@ -1,8 +1,9 @@
-(ns portfolio.pages.home 
-  (:require [portfolio.page :as page]))
+(ns portfolio.pages.home
+  (:require [clojure.string :as str]
+            [portfolio.page :as page]))
 
 (defn project->html [{:keys [label href img] :as _project}] 
-  [:a.project-item {:href href}
+  [:a.project-item (merge {:href href} (when (str/starts-with? href "https") {:target "_blank"}))
    label
    [:img.project-image img]])
 
