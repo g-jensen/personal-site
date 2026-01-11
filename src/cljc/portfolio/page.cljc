@@ -12,7 +12,7 @@
   [:div.center
    [:a {:href "/"} "Home"]
    [:a {:href "/math.html"} "Math"]
-   [:a {:href "mailto:greg.micah.jensen@gmail.com"} "Email"]
+   [:a {:href "/contact.html"} "Contact"]
    [:a {:href "/blog"} "Blog"]
    [:a {:href "https://www.github.com/g-jensen"} "GitHub"]])
 

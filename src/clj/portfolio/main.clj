@@ -11,6 +11,7 @@
             [portfolio.pages.projects.programming-challenges :as projects.programming-challenges]
             [portfolio.pages.projects.specc :as specc]
             [portfolio.pages.projects.text-editor :as projects.text-editor]
+            [portfolio.pages.contact :as contact]
             [blog-site.static :as blog]))
 
 (def page-path "resources/public/")
@@ -30,6 +31,7 @@
    "programming-challenges" projects.programming-challenges/page
    "math"                   math/page
    "specc"                  specc/page
+   "contact"                contact/page
   })
 
 (defn -main [& args]
