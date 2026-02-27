@@ -14,8 +14,6 @@
             [portfolio.pages.contact :as contact]
             [blog-site.static :as blog]))
 
-(def page-path "resources/public/")
-
 (defn generate-page! [page]
   (spit (:file-name page) (str (hiccup/html (:hiccup page)))))
 
@@ -34,6 +32,6 @@
    "contact"                contact/page
   })
 
-(defn -main [& args]
-  (run! generate-page! (map (fn [[k v]] (page/->page (str page-path k ".html") v)) pages))
-  (blog/-main "resources/posts" "resources/public/blog" ".html" page/nav-bar))
+(defn -main [& [destination-path blog-src-path :as args]]
+  (run! generate-page! (map (fn [[k v]] (page/->page (str destination-path k ".html") v)) pages))
+  (blog/-main blog-src-path (str destination-path "blog") ".html" page/nav-bar))
