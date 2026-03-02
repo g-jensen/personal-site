@@ -13,7 +13,7 @@
    [:a {:href "/"} "Home"]
    [:a {:href "/math.html"} "Math"]
    [:a {:href "/contact.html"} "Contact"]
-   [:a {:href "/blog"} "Blog"]
+   [:a {:href "/blog"} "Blogs"]
    [:a {:href "https://www.github.com/g-jensen"} "GitHub"]])
 
 (defn ->page [file-name hiccup]
