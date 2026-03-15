@@ -19,9 +19,9 @@
        [:ul
         [:li "We were given about 2 months to solve 4 problems and write an essay about fractals."]
         [:li [:a {:href "https://drive.google.com/file/d/1xMQfGd_iKgDw_Y0OKBFuYF3Wmn37sJMp/view"} "Contest poster with list of problems"]]
-        [:li [:a {:href "documents/2023 INDIVIDUAL PROBLEMS-1.pdf"} "My solutions"]]]]
+        [:li [:a {:href "/documents/2023 INDIVIDUAL PROBLEMS-1.pdf"} "My solutions"]]]]
       [:li
-       [:a {:href "documents/Set.pdf"} "Article on the mathematics behind the card game Set"]
+       [:a {:href "/documents/Set.pdf"} "Article on the mathematics behind the card game Set"]
        [:ul
         [:li "Assignment for college English class"]]]
       [:li "Mathy Blog Posts"

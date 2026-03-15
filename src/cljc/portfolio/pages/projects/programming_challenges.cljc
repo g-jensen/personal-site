@@ -13,7 +13,7 @@
      [:br]
      [:div.description
       [:ul
-       [:a {:href "https://projecteuler.net/"} [:img {:src "./images/euler_portrait.png"}]]
+       [:a {:href "https://projecteuler.net/"} [:img {:src "/images/euler_portrait.png"}]]
        [:li "Project Euler is \"a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve\""
         [:ul
          [:li [:a {:href "https://github.com/g-jensen/Project-Euler-Problems"} "Repo link (Various Languages)"]]

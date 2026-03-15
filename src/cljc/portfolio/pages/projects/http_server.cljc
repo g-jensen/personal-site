@@ -19,6 +19,6 @@
        [:li "You can find the source code on the " [:a {:href "https://github.com/g-jensen/HttpServer"} "GitHub page"]]
        "Here is an example app using the server:"
        [:div.center
-        [:img {:src "./images/carbon.png" :style "width: 100%; height: auto;"}]]
+        [:img {:src "/images/carbon.png" :style "width: 100%; height: auto;"}]]
        [:br]
        [:li "I also made a more complex example app " [:a {:href "https://github.com/g-jensen/HttpServerApp"} "here"]]]]]]))

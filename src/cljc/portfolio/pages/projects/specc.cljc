@@ -19,4 +19,4 @@
        [:li "Find instructions for setup here: " [:a {:href "https://github.com/g-jensen/specc"} "repo link"]]
        [:br]
        [:li "An example output:"]
-       [:img {:style "width: 100%;" :src "./images/specc.png" :alt "specc"}]]]]]))
+       [:img {:style "width: 100%;" :src "/images/specc.png" :alt "specc"}]]]]]))

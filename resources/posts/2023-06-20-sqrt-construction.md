@@ -20,22 +20,32 @@ The construction goes as follows:
 
 Construct a line AB
 
-![sqrt1](https://raw.githubusercontent.com/g-jensen/blog/main/assets/sqrt1.png)
+![sqrt1](/images/blog/sqrt1.png)
 
 Add a point C such that BC is of unit length and ABC is a line
 
-![sqrt2](https://raw.githubusercontent.com/g-jensen/blog/main/assets/sqrt2.png)
+![sqrt2](/images/blog/sqrt2.png)
 
 Label D as the midpoint of AC
 
-![sqrt3](https://raw.githubusercontent.com/g-jensen/blog/main/assets/sqrt3.png)
+![sqrt3](/images/blog/sqrt3.png)
 
 Draw a semi-circle centered at D with radius AD
 
-![sqrt4](https://raw.githubusercontent.com/g-jensen/blog/main/assets/sqrt4.png)
+![sqrt4](/images/blog/sqrt4.png)
 
 Draw a line perpendicular to BC at B up to the semi-circle. Label the intersection of the new line and the semi-circle E.
 
-![sqrt5](https://raw.githubusercontent.com/g-jensen/blog/main/assets/sqrt5.png)
+![sqrt5](/images/blog/sqrt5.png)
 
-The length BE is now sqrt(AB)
+The length BE is now sqrt(AB).
+
+This can be proven with a combination of the identities
+
+```
+1. (AB)^2 + (BE)^2 = (AE)^2
+2. (AE)^2 + (CE)^2 = (AC)^2
+3. 1 + (BE)^2 = (CE)^2
+```
+
+and some algebra.

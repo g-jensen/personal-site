@@ -6,7 +6,7 @@ Tags:
 [:math]
 -->
 
-![math-bridge](https://raw.githubusercontent.com/g-jensen/blog/main/assets/math-bridge.png)
+![math-bridge](/images/blog/math-bridge.jpg)
 
 The Mathematical Bridge, as seen above, is a wooden bridge in Cambridge, England built in 1749. The bridge
 is made completely out of straight pieces of wood. 
