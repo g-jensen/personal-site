@@ -21,11 +21,13 @@ Maybe your tests literally spin up a server and have the client and server liter
 
 ### Analysis
 
-The pattern with these solutions is that they get progressively closer to how the program will run in reality. I'll refer to the types of solutions as "stub", "mock", and "literal" respectively.
+The pattern with these solutions is that they get progressively closer to how the program will run in reality. I'll refer to the types of solutions as Stub, Mock, and Integration testing respectively.
 
 "Closeness to reality" has a great influence on how much you can trust your tests to fail when use-cases change (which is really the whole point of testing). Generally, the closer you are to reality, the more accurately your tests will fail with different use-cases.
 
-As a case study, let's look at Clojure pseudocode for the wire "stub" solution:
+#### Case Study
+
+As a case study, let's look at Clojure pseudocode for the wire Stub solution:
 ```clojure
 ; server-spec.clj
 (it "crunches a number"
@@ -49,7 +51,7 @@ As a case study, let's look at Clojure pseudocode for the wire "stub" solution:
   (send-request {:data 1}))
 ```
 
-This solution is okay, and accounts for every piece of code shown. What this doesn't account for is the actual communication between client and server.
+This solution accounts for every piece of code shown. What this doesn't account for is the actual communication between client and server.
 
 Imagine use-cases change and now we need to crunch a list instead of a single number. We might rewrite our server-side like so:
 ```clojure
@@ -63,12 +65,16 @@ Imagine use-cases change and now we need to crunch a list instead of a single nu
   (map inc (:data request)))
 ```
 
-Cool. So we're done. Except now our app is broken because the client-side is still sending a number instead of a list. We now have to also fix our client-side even though no tests are failing. Now imagine this test was 10x more complex and there were 100x more instances of this test on the client side. Then it might be hard to figure out all of the places that tests are implicitly failing. This kind of solution causes low trust in tests which decreases the value of testing overall.
+Cool. So we're done. Except now our app is broken because the client-side is still sending a number instead of a list. We now have to also fix our client-side even though no tests are failing. **Tests are only useful if they fail when functionality is broken.** Now imagine this test was 10x more complex and there were 100x more instances of this test on the client side. Then it might be hard to figure out all of the places that tests are implicitly failing. This kind of solution causes low trust in tests which decreases the value of testing overall.
 
-Using the other two solutions ("mock" and "literal") would avoid these 'implicitly' failing tests and cause both the client-side and server-side tests to fail.
+#### The Alternatives
 
-But what about the standard input and output example? You would likely never run into this problem when stubbing terminal I/O. This is because the API for `print` and `read-line` are probably never going to change, so your stub will never be inaccurate. The problem with the wire situation was that our API for `wire-crunch-data` changed, and so our stub was not accurate to the real use-case. (kinda sounds like the same reason that comments are bad)
+Using the other two solutions (Mock and Integration) are the alternatives to Stub and I argue that you should use *both* of them in this case.
 
-#### Pros and Cons
+Mocking would entail creating a `Client` abstraction (an interface) that implements `request-crunched-data`. In the tests, you use a fake implementation of `Client` like `ClientSpy` that doesn't actually send a request to the server and just saves the request to make sure the correct parameters were passed. In production, you use a real implementation. This is functionally equivalent to stubbing in the unit tests, so this actually doesn't solve our implicitly failing tests problem. But architecturally, it does solve a more hidden problem of depending on concretions rather than on abstractions. By picking Mocks over Stubs, we've stumbled upon an objectively better architecture. We could substitute an `HttpClient`, `Grpclient`, `CachingClient`, `LoggingClient`, etc. The possibilities are endless and we only have to swap out the implementations. The usage stays the same.
 
-Okay. You're sold on "mock" or "literal" testing. But when should you use one over the other? I said earlier that the solutions got closer to reality and that getting closer to reality is better, so "literal" testing must be the best. That's only sort of true. In the wire example, mocking a server would require the client and server to be written in the same language which is not always the case. On the other hand, spinning up a server for your tests might take a while and make TDD slow. This could cause you to reconsider the "stub" solution. Evidently there's definitely a happy medium to find when deciding which solution you choose.
+Integration testing is where we end up actually solving our problem. This entails writing a test that just does whatever a user of that piece of code would do in production (except for possibly pointing the request at a local server instead of a live one). This way, you get real confirmation that functionality is broken. These kinds of tests can take time to run so you don't run them during every TDD loop. Instead, you run them at least before you push your code (or during, if you have a CI pipeline) and maybe more.
+
+### The Importance of Both
+
+It may be tempting to just pick either Mocking or Integration testing, but it's important to understand why you need both. If you only use Mocks, you run into the same problem as Stubbing where you have implicitly failing tests. If you only Integration test, you fall into lazy architecture habits that result in high coupling and therefore fragile code. TDD or even unit testing in general is also a lot harder since you depend on slow tests a lot more. Doing both is the only way to maintain clean code that is truly tested.

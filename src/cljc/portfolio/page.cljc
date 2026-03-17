@@ -14,7 +14,8 @@
    [:a {:href "/math"} "Math"]
    [:a {:href "/contact"} "Contact"]
    [:a {:href "/blog"} "Blog"]
-   [:a {:href "https://www.github.com/g-jensen"} "GitHub"]])
+   [:a {:href "https://www.github.com/g-jensen"} "GitHub"]
+   [:a {:href "https://linkedin.com/in/greg-jensen-88210a262" :target "_blank"} "LinkedIn"]])
 
 (defn ->page [file-name hiccup]
   {:file-name file-name :hiccup hiccup})
