@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Books</title>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <label for="size-select">Paper size:</label>
+  <select name="size" id="size-select">
+    <option value="a4">A4</option>
+    <option value="8.5x11">8.5" x 11"</option>
+  </select>
+  <br>
+  <label for="file-select">Import images:</label>
+  <input onchange="window.handleFileChange()" type="file" accept="image/png, image/jpeg" id="file-select" multiple />
+  <br>
+  <br>
+  <div id="file-list"></div>
+  <br>
+  <button id="generate-button" onclick="window.generatePDF()" disabled>Generate PDF</button>
+</body>
+</html>
