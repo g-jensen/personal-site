@@ -15,13 +15,13 @@ Maybe you're low level and have access to the literal standard input stream, and
 
 Maybe you stub out your `send-request` function on the client side and just make sure that it is called with the correct parameters. On the server side, you directly test all the ways that your `request-handler` will be called and make sure the correct response is returned.
 
-Maybe you have some sort of `web-server` abstraction such that you can create a mock server and have requests really hit their endpoints on the server and have the client really get the response back.
+Maybe you have some sort of `web-server` abstraction such that you can create a fake server and have requests actually hit something on the fake server and have the client get a response back.
 
-Maybe your tests literally spin up a server and have the client and server literally communicate with each other.
+Maybe your tests literally spin up a server and have the client and server truly communicate with each other.
 
 ### Analysis
 
-The pattern with these solutions is that they get progressively closer to how the program will run in reality. I'll refer to the types of solutions as Stub, Mock, and Integration testing respectively.
+The pattern with these solutions is that they get progressively closer to how the program will run in reality. I'll refer to the types of solutions as Stub, (Test) Doubles, and Integration testing respectively.
 
 "Closeness to reality" has a great influence on how much you can trust your tests to fail when use-cases change (which is really the whole point of testing). Generally, the closer you are to reality, the more accurately your tests will fail with different use-cases.
 
@@ -69,12 +69,12 @@ Cool. So we're done. Except now our app is broken because the client-side is sti
 
 #### The Alternatives
 
-Using the other two solutions (Mock and Integration) are the alternatives to Stub and I argue that you should use *both* of them in this case.
+Using the other two solutions (Double and Integration) are the alternatives to Stub and I argue that you should use *both* of them in this case.
 
-Mocking would entail creating a `Client` abstraction (an interface) that implements `request-crunched-data`. In the tests, you use a fake implementation of `Client` like `ClientSpy` that doesn't actually send a request to the server and just saves the request to make sure the correct parameters were passed. In production, you use a real implementation. This is functionally equivalent to stubbing in the unit tests, so this actually doesn't solve our implicitly failing tests problem. But architecturally, it does solve a more hidden problem of depending on concretions rather than on abstractions. By picking Mocks over Stubs, we've stumbled upon an objectively better architecture. We could substitute an `HttpClient`, `Grpclient`, `CachingClient`, `LoggingClient`, etc. The possibilities are endless and we only have to swap out the implementations. The usage stays the same.
+Making Test Doubles would entail creating a `Client` abstraction (an interface) that implements `request-crunched-data`. In the tests, you use a fake implementation of `Client` like `ClientSpy` that doesn't actually send a request to the server and just saves the request to make sure the correct parameters were passed. In production, you use a real implementation. This is functionally equivalent to stubbing in the unit tests, so this actually doesn't solve our implicitly failing tests problem. But architecturally, it does solve a more hidden problem of depending on concretions rather than on abstractions. By picking Doubles over Stubs, we've stumbled upon an objectively better architecture. We could substitute an `HttpClient`, `Grpclient`, `CachingClient`, `LoggingClient`, etc. The possibilities are endless and we only have to swap out the implementations. The usage stays the same.
 
 Integration testing is where we end up actually solving our problem. This entails writing a test that just does whatever a user of that piece of code would do in production (except for possibly pointing the request at a local server instead of a live one). This way, you get real confirmation that functionality is broken. These kinds of tests can take time to run so you don't run them during every TDD loop. Instead, you run them at least before you push your code (or during, if you have a CI pipeline) and maybe more.
 
 ### The Importance of Both
 
-It may be tempting to just pick either Mocking or Integration testing, but it's important to understand why you need both. If you only use Mocks, you run into the same problem as Stubbing where you have implicitly failing tests. If you only Integration test, you fall into lazy architecture habits that result in high coupling and therefore fragile code. TDD or even unit testing in general is also a lot harder since you depend on slow tests a lot more. Doing both is the only way to maintain clean code that is truly tested.
+It may be tempting to just pick either Test Doubles or Integration testing, but it's important to understand why you need both. If you only use Test Doubles, you run into the same problem as Stubbing where you have implicitly failing tests. If you only Integration test, you fall into lazy architecture habits that result in high coupling and therefore fragile code. TDD or even unit testing in general is also a lot harder since you depend on slow tests a lot more. Doing both is the only way to maintain clean code that is truly tested.
