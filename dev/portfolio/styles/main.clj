@@ -7,6 +7,10 @@
 
 (list
  
+ [:html
+  {:background-color "#F6F3EB"
+   :color "#1C1A15"}]
+
  [:.post
   {:display "flex"
    :justify-content "center"}
@@ -67,16 +71,21 @@
   {:display "flex"
    :flex-wrap "wrap"
    :gap "20px"
-   :justify-content "center"
-   :margin-right "25%"
-   :margin-left "25%"}]
+  ;;  :justify-content "center"
+  ;;  :margin-right "25%"
+  ;;  :margin-left "25%"
+   }]
+  
+ [:.padding-ul
+  {:padding-left "16px"}]
  
  [:.project-item
   {:box-sizing "border-box"
    :text-align "center"
    :display "grid"
    :justify-content "center"
-   :border "5px double black"}]
+   :border "5px double black"
+   :background-color "white"}]
  
  [:.project-image
   {:width "250px"

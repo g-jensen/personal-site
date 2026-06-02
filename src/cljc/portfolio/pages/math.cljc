@@ -14,6 +14,8 @@
     [:div.center
      [:br]
      [:ul
+      [:li "I have a BSc. in Pure Mathematics from Purdue University."]
+      [:li "I'm currently employed by Indiana University working on math research."]
       [:li
        [:a {:href "https://science.iupui.edu/math/about/math-contest/index.html"} "IUPUI Highschool Math Contest 2023"] " (2nd place)"
        [:ul

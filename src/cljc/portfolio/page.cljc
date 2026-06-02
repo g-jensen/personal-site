@@ -8,10 +8,12 @@
    [:link {:href "/styles.css" :rel "stylesheet"}]
    [:title title]])
 
+(def math-href {:href "/math"})
+
 (def nav-bar
   [:div.center
    [:a {:href "/"} "Home"]
-   [:a {:href "/math"} "Math"]
+   [:a math-href "Math"]
    [:a {:href "/contact"} "Contact"]
    [:a {:href "/blog"} "Blog"]
    [:a {:href "https://www.github.com/g-jensen"} "GitHub"]
