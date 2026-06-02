@@ -12,6 +12,6 @@ Set `STATIC_SITE_PATH` in the `.env` file. This is where the built site will be 
 
 ## Development
 
-To serve the website locally, first run `build.sh` then run `deploy.sh`
+To serve the website locally, first run `build.sh` then run `local-serve.sh`
 
 To publish a change, push the commit to this repo and run `publish.sh`
