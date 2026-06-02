@@ -9,3 +9,9 @@ Set `REMOTE_USER`, `REMOTE_HOST`, `REMOTE_PATH` in your `.env` file. `REMOTE_PAT
 ### Remote instance
 
 Set `STATIC_SITE_PATH` in the `.env` file. This is where the built site will be placed.
+
+## Development
+
+To serve the website locally, first run `build.sh` then run `deploy.sh`
+
+To publish a change, push the commit to this repo and run `publish.sh`
