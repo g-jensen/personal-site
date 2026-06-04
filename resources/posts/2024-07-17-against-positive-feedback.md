@@ -5,7 +5,7 @@ The title of this post is not to imply that positive feedback is useless. Positi
 
 ### Morale
 
-Sometimes the one thing that you need to muster the willpower to keep going is validation from someone else. Similar to a drug, it's best to be experienced only when necessary lest you become dependent on it for normal function. Practically, you don't always know when a person needs validation and it isn't as addictive as any drug, so a little here and there is healthy.
+Sometimes the one thing that you need to muster the willpower to keep going is validation from someone else. Similar to a drug, it's best to be experienced only when necessary lest you become dependent on it for normal function. Practically, you don't always know when a person needs validation and it isn't as addictive as any drug, so a little here and there is healthy and cultivates connection.
 
 ### Building perspective
 
