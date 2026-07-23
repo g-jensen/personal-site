@@ -29,13 +29,13 @@
       [:div
        [:h4 no-margin-bottom "Currently Exploring"]
        [:ul.padding-ul no-margin-top
-        [:li "Site Reliability"]
+        [:li "Automatic Theorem Proving"]
         [:li [:a {:href "https://pi.dev/" :target "_blank"} "Pi"] " (coding agent)"]
         [:li "Woodworking"]]]
       [:div
        [:h4 no-margin-bottom "Actively Reading"]
        [:ul.padding-ul no-margin-top
-        [:li [:a {:href "https://sre.google/workbook/table-of-contents/" :target "_blank"} "The Site Reliability Workbook"]]
+        [:li [:a {:href "https://lean-lang.org/functional_programming_in_lean/" :target "_blank"} "Functional Programming in Lean"]]
         [:li [:a {:href "https://files.cercomp.ufg.br/weby/up/410/o/Phillip_K._Dick_-_Do_Androids_Dream_of_Electric_Sheep_c%C3%B3pia.pdf" :target "_blank"} "Do Androids Dream of Electric Sheep?"]]
         [:li [:a {:href "https://kinokultur.ch/app/uploads/2015/10/buchtext_der_kleine_prinz.pdf" :target "_blank"} "Der Kleine Prinz"]]]]
       [:div
